@@ -9,11 +9,13 @@ from zipfile import ZipFile
 # --------------------------
 # Paths
 # --------------------------
-ART_DIR = "G:/My Drive/AI_TRACEFINDER_DS"
-FP_PATH = os.path.join(ART_DIR, "scanner_fingerprints.pkl")
-ORDER_NPY = os.path.join(ART_DIR, "fp_keys.npy")
-ckpt_path = os.path.join(ART_DIR, "scanner_hybrid.keras")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # folder of this script
 
+FP_PATH = os.path.join(BASE_DIR, "scanner_fingerprints.pkl")
+ORDER_NPY = os.path.join(BASE_DIR, "fp_keys.npy")
+CKPT_PATH = os.path.join(BASE_DIR, "scanner_hybrid.keras")
+LE_PATH = os.path.join(BASE_DIR, "hybrid_label_encoder.pkl")
+SCALER_PATH = os.path.join(BASE_DIR, "hybrid_feat_scaler.pkl")
 # --------------------------
 # Cached Loaders
 # --------------------------
