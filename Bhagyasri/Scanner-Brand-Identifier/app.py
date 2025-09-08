@@ -15,16 +15,29 @@ ORDER_NPY = os.path.join(ART_DIR, "fp_keys.npy")
 ckpt_path = os.path.join(ART_DIR, "scanner_hybrid.keras")
 
 # --------------------------
-# Load model + artifacts
+# Cached Loaders
 # --------------------------
-hyb_model = tf.keras.models.load_model(ckpt_path, compile=False)
-with open(os.path.join(ART_DIR, "hybrid_label_encoder.pkl"), "rb") as f:
-    le_inf = pickle.load(f)
-with open(os.path.join(ART_DIR, "hybrid_feat_scaler.pkl"), "rb") as f:
-    scaler_inf = pickle.load(f)
-with open(FP_PATH, "rb") as f:
-    scanner_fps_inf = pickle.load(f)
-fp_keys_inf = np.load(ORDER_NPY, allow_pickle=True).tolist()
+@st.cache_resource
+def load_model(ckpt_path):
+    return tf.keras.models.load_model(ckpt_path, compile=False)
+
+@st.cache_resource
+def load_pickle(path):
+    with open(path, "rb") as f:
+        return pickle.load(f)
+
+@st.cache_resource
+def load_numpy(path):
+    return np.load(path, allow_pickle=True).tolist()
+
+# --------------------------
+# Load model + artifacts (cached)
+# --------------------------
+hyb_model = load_model(ckpt_path)
+le_inf = load_pickle(os.path.join(ART_DIR, "hybrid_label_encoder.pkl"))
+scaler_inf = load_pickle(os.path.join(ART_DIR, "hybrid_feat_scaler.pkl"))
+scanner_fps_inf = load_pickle(FP_PATH)
+fp_keys_inf = load_numpy(ORDER_NPY)
 IMG_SIZE = (256, 256)
 
 # --------------------------
@@ -189,4 +202,3 @@ with tabs[3]:
                            file_name="scanner_predictions.csv", mime="text/csv")
     else:
         st.info("No logs yet. Upload an image to start logging predictions.")
-
