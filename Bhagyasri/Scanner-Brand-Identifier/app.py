@@ -16,6 +16,7 @@ ORDER_NPY = os.path.join(BASE_DIR, "fp_keys.npy")
 CKPT_PATH = os.path.join(BASE_DIR, "scanner_hybrid.keras")
 LE_PATH = os.path.join(BASE_DIR, "hybrid_label_encoder.pkl")
 SCALER_PATH = os.path.join(BASE_DIR, "hybrid_feat_scaler.pkl")
+
 # --------------------------
 # Cached Loaders
 # --------------------------
@@ -35,12 +36,13 @@ def load_numpy(path):
 # --------------------------
 # Load model + artifacts (cached)
 # --------------------------
-hyb_model = load_model(ckpt_path)
-le_inf = load_pickle(os.path.join(ART_DIR, "hybrid_label_encoder.pkl"))
-scaler_inf = load_pickle(os.path.join(ART_DIR, "hybrid_feat_scaler.pkl"))
+hyb_model = load_model(CKPT_PATH)
+le_inf = load_pickle(LE_PATH)
+scaler_inf = load_pickle(SCALER_PATH)
 scanner_fps_inf = load_pickle(FP_PATH)
 fp_keys_inf = load_numpy(ORDER_NPY)
 IMG_SIZE = (256, 256)
+
 
 # --------------------------
 # Utilities
