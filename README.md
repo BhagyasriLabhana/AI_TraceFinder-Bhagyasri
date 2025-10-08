@@ -95,7 +95,8 @@ This project identifies the source scanner of a document image and detects tampe
 
 - Target: scans from multiple scanners (3–5+ models), balanced across classes.
 - Suggested sources: in‑house scans per guidelines; external public datasets (e.g., Kaggle) for augmentation with care.
-
+- Dataset Drive Link:- https://drive.google.com/drive/folders/1wEJl8WU29h07RZRutTa_yglpf0jMzmGq
+  
 ## Evaluation
 
 - Scanner ID: accuracy, precision, recall, F1, confusion matrix; robustness across resolution/format.
