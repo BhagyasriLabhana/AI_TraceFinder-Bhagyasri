@@ -112,15 +112,15 @@ This project identifies the source scanner of a document image and detects tampe
 - app.py — Streamlit app entrypoint.
 - requirements.txt — Dependencies.
 - AI_TraceFinder-FSI.ipynb — Colab notebook with training and artifact export.
-- Artifacts — model and scaler files listed above.
-- Bhagyasri/ — workspace folder for submissions, logs, and screenshots.
+- Ai-Tracefinder/ — model and scaler files listed above.
+- Bhagyasri/ - Contains Entire Project
 
 ## Milestone deliverables checklist
 
-- M1: Dataset manifest, preprocessing scripts, residual visualizations.[1]
-- M2: Feature extractors, baseline models, metrics plots.[1]
-- M3: Hybrid CNN model, explainability reports, validation metrics.[1]
-- M4: Streamlit app, deployment artifacts, final documentation and screenshots.[1][2]
+- M1: Dataset manifest, preprocessing scripts, residual visualizations.
+- M2: Feature extractors, baseline models, metrics plots.
+- M3: Hybrid CNN model, explainability reports, validation metrics.
+- M4: Streamlit app, deployment artifacts, final documentation and screenshots.
 
 ## Troubleshooting
 
