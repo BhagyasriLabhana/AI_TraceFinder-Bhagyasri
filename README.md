@@ -12,7 +12,7 @@ This project identifies the source scanner of a document image and detects tampe
 
 - Digital forensics: attribute forged or duplicated documents to specific scanners.
 - Document authentication: differentiate authorized vs unauthorized scanner outputs.
-- Legal verification: confirm scans originate from approved devices.[1]
+- Legal verification: confirm scans originate from approved devices.
 
 ## System overview
 
