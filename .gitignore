@@ -1,0 +1,1 @@
+-e "pycache/\n*.pkl\n*.keras\n*.h5\n*.pt\n*.onnx\n*.tflite\n*.zip\n*.log\n.env\n.DS_Store\n.vscode/\n.idea/\n*.tif\n*.tiff\n*.png\n*.jpg\nartifacts*/\nmodels*/\n*/pycache/\n" 
